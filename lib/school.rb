@@ -13,4 +13,14 @@ class School
   def end_time
     "#{@start_time[0].to_i + @hours_in_school_day}:00"
   end
+
+  def is_full_time?
+    @hours_in_school_day >= 4
+  end
+
+  def standard_student_names
+    @student_names.map do |name|
+      name.capitalize
+    end
+  end 
 end
