@@ -22,5 +22,9 @@ class School
     @student_names.map do |name|
       name.capitalize
     end
-  end 
+  end
+
+  def convert_end_time_to_clock_time
+    "#{(end_time.split(':')[0].to_i) - 12}:00"
+  end
 end
