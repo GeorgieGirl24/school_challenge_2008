@@ -11,7 +11,10 @@ class School
   end
 
   def end_time
-    "#{@start_time[0].to_i + @hours_in_school_day}:00"
+    hours = @start_time.split(':')[0].to_i + @hours_in_school_day
+    minutes = @start_time.split(':')[1]
+    "#{hours}:#{minutes}"
+    # "#{@start_time[0].to_i + @hours_in_school_day}:00"
   end
 
   def is_full_time?
@@ -25,6 +28,8 @@ class School
   end
 
   def convert_end_time_to_clock_time
-    "#{(end_time.split(':')[0].to_i) - 12}:00"
+    hours = (end_time.split(':')[0].to_i) - 12
+    minutes = end_time.split(':')[1]
+    "#{hours}:#{minutes}"
   end
 end
